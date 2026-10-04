@@ -1,1 +1,51 @@
-@import url(https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;600;700&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;600;700&display=swap');
+
+:root {
+
+    --color-papel: #f2ebdd;
+    --color-papel-oscuro: #e6dcc8;
+    --color-tinta: #1c1a17;
+    --color-gris: #6b645a;
+    --color-rojo: #d6402b;
+    --color-mostaza: #e0a526;
+    --borde-base: 2px solid #1c1a17;
+    --fuente-titulos: 'Anton', sans-serif;
+    --fuente-texto: 'Work Sans', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-papel);
+    color: var(--color-tinta);
+    font-family: var(--fuente-texto);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: var(--fuente-texto);
+}
+
+button {
+    cursor: pointer;
+}
+
