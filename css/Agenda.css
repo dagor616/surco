@@ -1,0 +1,107 @@
+.presentacion {
+    border-bottom: var(--borde-base);
+}
+
+.presentacion .contenedor {
+    padding-top: 65px;
+    padding-bottom: 45px;
+}
+
+.presentacion h1 {
+    margin-bottom: 10px;
+}
+
+.descripcion-presentacion {
+    max-width: 620px;
+    color: var(--color-gris);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.agenda-section {
+    padding: 60px 0 80px;
+}
+
+.eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.evento-card {
+    display: flex;
+    align-items: stretch;
+    border: var(--borde-base);
+    background: rgba(255,255,255,0.5);
+    overflow: hidden;
+}
+
+.evento-fecha {
+    min-width: 120px;
+    background: var(--color-tinta);
+    color: var(--color-papel);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 18px 12px;
+}
+
+.evento-fecha .dia {
+    font-family: var(--fuente-titulos);
+    font-size: 48px;
+    line-height: 1;
+}
+
+.evento-fecha .mes {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 6px;
+}
+
+.evento-info {
+    flex: 1;
+    padding: 22px 22px 18px;
+}
+
+.categoria {
+    color: var(--color-rojo);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.evento-info h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.lugar,
+.descripcion {
+    color: var(--color-gris);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.lugar {
+    margin-bottom: 10px;
+}
+
+.descripcion {
+    margin-bottom: 16px;
+}
+
+.evento-card .boton {
+    margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+    .eventos-grid {
+        grid-template-columns: 1fr;
+    }
+}
