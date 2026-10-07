@@ -1,0 +1,387 @@
+:root {
+    --papel: #f2ebdd;
+    --papel-oscuro: #e6dcc8;
+    --tinta: #1c1a17;
+    --gris: #6b645a;
+    --rojo: #d6402b;
+    --rojo-claro: #e06555;
+    --mostaza: #e0a526;
+    --azul: #284a7c;
+    --azul-claro: #566f9a;
+    --crema: #e8dcc4;
+    --crema-claro: #efe6d3;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--papel);
+    color: var(--tinta);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+
+h1, h2, h3, .logo, .precio {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+/* ---------- Encabezado (flex) ---------- */
+.encabezado {
+    padding: 28px 0 20px;
+}
+
+.encabezado .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo { font-size: 34px; }
+.logo span { color: var(--rojo); }
+
+.menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.menu a {
+    display: inline-block;
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent;
+}
+
+.menu a:hover { color: var(--rojo); }
+
+.menu a.activo {
+    color: var(--rojo);
+    border-bottom-color: var(--rojo);
+}
+
+/* ---------- Cinta (flex) ---------- */
+.cinta {
+    display: flex;
+    justify-content: center;
+    padding: 10px 24px;
+    background: var(--tinta);
+    color: var(--papel);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* ---------- Disco del mes (grid 2 columnas) ---------- */
+.disco {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    padding-top: 70px;
+    padding-bottom: 90px;
+}
+
+/* Portada (flex en columna) */
+.portada {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    aspect-ratio: 1 / 1;
+    padding: 36px;
+    overflow: hidden;
+    background: var(--rojo);
+    color: var(--papel);
+    border: 2px solid var(--tinta);
+}
+
+.portada::after {
+    content: "";
+    position: absolute;
+    right: -40px;
+    bottom: -40px;
+    width: 55%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: var(--rojo-claro);
+}
+
+.portada h2,
+.portada h3,
+.portada p {
+    position: relative;
+    z-index: 1;
+}
+
+.portada h2 { font-size: 64px; }
+
+.portada p {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Información */
+.antetitulo {
+    color: var(--rojo);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.info h1 {
+    margin-top: 14px;
+    font-size: 90px;
+}
+
+.artista {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.precio {
+    display: block;
+    margin-top: 40px;
+    color: var(--rojo);
+    font-size: 48px;
+}
+
+.descripcion {
+    margin: 28px 0;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+.boton {
+    display: inline-block;
+    padding: 12px 20px;
+    background: var(--tinta);
+    color: var(--papel);
+    border: 2px solid var(--tinta);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.boton:hover { background: var(--rojo); border-color: var(--rojo); }
+
+/* Ficha técnica (grid 2 x 2) */
+.ficha {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 32px;
+    border: 2px solid var(--tinta);
+}
+
+.ficha div {
+    padding: 14px 16px;
+    border: 1px solid var(--tinta);
+}
+
+.ficha dt {
+    color: var(--gris);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.ficha dd {
+    margin-top: 4px;
+    font-weight: 700;
+}
+
+/* Canciones (flex en cada fila) */
+.lado { margin-top: 36px; }
+.lado h2 { margin-bottom: 10px; font-size: 32px; }
+
+.cancion {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 2px solid var(--papel-oscuro);
+}
+
+.cancion .numero {
+    color: var(--rojo);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.cancion .nombre {
+    flex: 1;
+    font-weight: 600;
+}
+
+.cancion .duracion {
+    color: var(--gris);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ---------- grid 4 columnas ---------- */
+.recomendados {
+    padding: 80px 0 100px;
+    border-top: 2px solid var(--tinta);
+}
+
+.recomendados h2 {
+    margin-bottom: 40px;
+    font-size: 48px;
+}
+
+.lista-discos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.tarjeta .portada { padding: 20px; }
+.tarjeta .portada h3 { font-size: 28px; }
+.tarjeta .portada p { font-size: 10px; letter-spacing: 0.5px; }
+
+.tarjeta .portada::after {
+    right: -20px;
+    bottom: -20px;
+    width: 50%;
+    border-radius: 0;
+    transform: rotate(8deg);
+}
+
+.portada.negra { background: var(--tinta); }
+
+.portada.negra::after {
+    top: 90px;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    width: 100%;
+    aspect-ratio: auto;
+    height: 40px;
+    transform: none;
+    background: #46433e;
+}
+
+.portada.crema { background: var(--crema); color: var(--tinta); }
+.portada.crema::after { background: var(--crema-claro); }
+
+.portada.azul { background: var(--azul); }
+.portada.azul::after { background: var(--azul-claro); border-radius: 50%; transform: none; }
+
+/* Datos de cada disco (grid) */
+.datos {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2px 12px;
+    align-items: baseline;
+    margin-top: 12px;
+}
+
+.titulo-disco  { font-weight: 700; }
+.artista-disco { grid-column: 1; color: var(--gris); font-size: 14px; font-weight: 600; }
+.precio-disco  { grid-column: 2; grid-row: 1; font-weight: 700; }
+
+/* ---------- Pie de página (grid) ---------- */
+.pie {
+    padding: 70px 0 30px;
+    background: var(--tinta);
+    color: var(--papel);
+}
+
+.pie-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.pie .logo { font-size: 64px; }
+
+.direccion {
+    margin-top: 16px;
+    font-weight: 600;
+}
+
+.pie h3 {
+    margin-bottom: 14px;
+    color: var(--mostaza);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.pie li + li { margin-top: 8px; }
+.pie li a { font-weight: 600; }
+.pie li a:hover { color: var(--rojo); }
+
+.pie-final {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #4a463f;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+/* Celular */
+@media (max-width: 600px) {
+    .contenedor { padding: 0 20px; }
+
+    .encabezado .contenedor {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .menu ul {
+        justify-content: center;
+        gap: 10px 20px;
+    }
+
+    .cinta { font-size: 12px; }
+
+    .portada { padding: 24px; }
+    .portada h2 { font-size: 48px; }
+
+    .precio { font-size: 44px; }
+
+    .lista-discos { gap: 20px; }
+    .tarjeta .portada h3 { font-size: 22px; }
+
+    .datos { grid-template-columns: 1fr; }
+    .precio-disco { grid-column: 1; grid-row: auto; }
+
+    .pie-grid { grid-template-columns: 1fr; gap: 32px; }
+    .pie-final { flex-direction: column; }
+}
